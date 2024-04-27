@@ -7,7 +7,3 @@
 
 Projeyi çalıştırdığınızda, kamera otomatik olarak açılacak ve yüzünüzü tespit edecektir. Gözlerinizin açık olup olmadığı ekranda gösterilecektir.
 
-## Katkıda Bulunma
-
-Projeye katkıda bulunmak isteyenler, pull request gönderebilir veya mevcut sorunları çözmek için issue açabilirler.
-
