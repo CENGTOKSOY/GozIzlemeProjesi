@@ -2,19 +2,6 @@ import cv2
 import dlib
 from scipy.spatial import distance as dist
 
-# Yüz ve göz izleme için gerekli olan önceden eğitilmiş modellerin yüklenmesi
-p = "shape_predictor_68_face_landmarks.dat"
-face_detector = dlib.get_frontal_face_detector()
-face_predictor = dlib.shape_predictor(p)
-
-# Gözlerin açık olup olmadığını kontrol etmek için EAR (Eye Aspect Ratio) hesaplama fonksiyonu
-def calculate_ear(eye):
-    # Dikey landmark noktaları arasındaki mesafeler
-    A = dist.euclidean(eye[1], eye[5])
-    B = dist.euclidean(eye[2], eye[4])
-
-    # Yatay landmark noktaları arası mesafe
-    C = dist.euclidean(eye[0], eye[3])
 
     # EAR hesaplanması
     ear = (A + B) / (2.0 * C)
