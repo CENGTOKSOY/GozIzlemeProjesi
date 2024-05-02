@@ -49,4 +49,19 @@ while True:
         left_ear = calculate_ear(left_eye)
         right_ear = calculate_ear(right_eye)
 
- 
+        # Gözlerin açık olup olmadığının kontrol edilmesi
+        if left_ear < 0.2 and right_ear < 0.2:
+            cv2.putText(frame, "Gozler Kapali", (50, 150), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+        else:
+            cv2.putText(frame, "Gozler Acik", (50, 150), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+
+    # Sonuçların ekranda gösterilmesi
+    cv2.imshow("Frame", frame)
+
+    # 'q' tuşuna basıldığında döngüden çıkılması
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# Kamera akışının ve pencerelerin kapatılması
+cap.release()
+cv2.destroyAllWindows()
